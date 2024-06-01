@@ -1,0 +1,17 @@
+{
+  "name": "aplikasi-desktop-manajemen-keuangan-ukm",
+  "productName": "Aplikasi Manajemen Keuangan UKM",
+  "version": "1.0.0",
+  "description": "Aplikasi Desktop untuk mengatur keuangan UKM",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Albert Mangiri",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^30.0.9",
+    "toastify-js": "^1.12.0"
+  }
+}
