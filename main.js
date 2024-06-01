@@ -1,21 +1,29 @@
 const path = require("path");
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 
 const isDev = process.env.NODE_ENV !== "development";
 const isMac = process.platform === "darwin";
 
-const createMainWindow = () => {
-  const mainWindow = new BrowserWindow({
+let mainWindow;
+
+const createMainWindow = (page = "index.html") => {
+  mainWindow = new BrowserWindow({
     title: "Aplikasi Manajemen Keuangan UKM",
     width: isDev ? 1000 : 500,
     height: 900,
+    webPreferences: {
+      preload: path.join(__dirname, "./renderer/js/main.js"),
+      contextIsolation: true,
+      enableRemoteModule: false,
+      nodeIntegration: false,
+    },
   });
 
   if (isDev) {
     mainWindow.webContents.openDevTools();
   }
 
-  mainWindow.loadFile(path.join(__dirname, "./renderer/index.html"));
+  mainWindow.loadFile(path.join(__dirname, `./renderer/${page}`));
 };
 
 app.whenReady().then(() => {
@@ -32,4 +40,8 @@ app.on("window-all-closed", () => {
   if (!isMac) {
     app.quit();
   }
+});
+
+ipcMain.on("navigate", (event, page) => {
+  mainWindow.loadFile(path.join(__dirname, `./renderer/${page}`));
 });
