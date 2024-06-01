@@ -1,12 +1,12 @@
 const path = require("path");
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow } = require("electron");
 
-const isDev = process.env.NODE_ENV !== "development";
+const isDev = process.env.NODE_ENV === "development";
 const isMac = process.platform === "darwin";
 
 let mainWindow;
 
-const createMainWindow = (page = "index.html") => {
+const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     title: "Aplikasi Manajemen Keuangan UKM",
     width: isDev ? 1000 : 500,
@@ -23,7 +23,7 @@ const createMainWindow = (page = "index.html") => {
     mainWindow.webContents.openDevTools();
   }
 
-  mainWindow.loadFile(path.join(__dirname, `./renderer/${page}`));
+  mainWindow.loadFile(path.join(__dirname, "./renderer/index.html"));
 };
 
 app.whenReady().then(() => {
@@ -40,8 +40,4 @@ app.on("window-all-closed", () => {
   if (!isMac) {
     app.quit();
   }
-});
-
-ipcMain.on("navigate", (event, page) => {
-  mainWindow.loadFile(path.join(__dirname, `./renderer/${page}`));
 });
