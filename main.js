@@ -1,3 +1,6 @@
+require("dotenv").config();
+const Chart = require("chart.js");
+
 const path = require("path");
 const { app, BrowserWindow } = require("electron");
 
@@ -13,9 +16,9 @@ const createMainWindow = () => {
     height: 900,
     webPreferences: {
       preload: path.join(__dirname, "./renderer/js/main.js"),
-      contextIsolation: true,
+      contextIsolation: false,
       enableRemoteModule: false,
-      nodeIntegration: false,
+      nodeIntegration: true,
     },
   });
 

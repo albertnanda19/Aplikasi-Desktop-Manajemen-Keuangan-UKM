@@ -12,9 +12,17 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^10.4.19",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
+    "chartjs-adapter-moment": "^1.0.1",
+    "dotenv": "^16.4.5",
     "electron": "^30.0.9",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "toastify-js": "^1.12.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }
