@@ -71,9 +71,9 @@ const loadDashboardData = async () => {
       data.expense.from_date;
     document.getElementById("expense-to-date").innerText = data.expense.to_date;
 
-    loadChart("profit-chart", "Profit", data.profit.detail);
-    loadChart("income-chart", "Income", data.income.detail);
-    loadChart("expense-chart", "Expense", data.expense.detail);
+    loadChart("profit-chart", "Keuntungan", data.profit.detail);
+    loadChart("income-chart", "Pemasukan", data.income.detail);
+    loadChart("expense-chart", "Pengeluaran", data.expense.detail);
   } catch (error) {
     console.error("Error fetching dashboard data:", error);
   }
