@@ -1,106 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pengeluaran</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .navbar{
-      background: #7AB2B2;
-      margin: 0;
-      padding: 10px 30px;
-    }
-    
-    .logo{
-      font-size: 18pt;
-      font-weight: bold;
-      text-decoration: none;
-      color: black;
-      font-family: sans-serif;
-    }
-    
-    .container{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .menu{
-      margin: 0;
-      display: flex;
-      list-style: none;
-      padding: 0;			
-    }
-    
-    .menu li{
-      padding-left: 0;
-      margin-right: 10px;
-    }
-    
-    .menu li a{
-      padding:10px;
-      color: black;
-      text-decoration: none;
-      display: inline-block;
-      font-family: sans-serif;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengeluaran</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .navbar {
+        background: #7ab2b2;
+        margin: 0;
+        padding: 10px 30px;
+      }
+
+      .logo {
+        font-size: 18pt;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .menu {
+        margin: 0;
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+
+      .menu li {
+        padding-left: 0;
+        margin-right: 10px;
+      }
+
+      .menu li a {
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
 
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="container">
-          <a class="logo">Nama APK</a>
-      
-          <ul class="menu">
-            <li><a href="#" data-page="dashboard.html">Dashboard</a></li>
-            <li><a href="#" data-page="pemasukan.html">Pemasukan</a></li>
-            <li><a href="#" data-page="pengeluaran.html">Pengeluaran</a></li>
-            <li><a href="#" data-page="laporan.html">Laporan</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
     <div class="content">
-    <div class="main">
+      <div class="main">
         <div class="card">
-        <img src="../aset/Pencil.png" alt="">
-        <h1>Catat Pengeluaran</h1>
+          <img src="../aset/Pencil.png" alt="" />
+          <h1>Catat Pengeluaran</h1>
         </div>
-        <div class="card-catatan">    
-            <div class="section rupiah">
-                <span>Rp.</span>
-                <input type="number" id="jumlahUang" name="jumlahUang" placeholder="0" oninput="changePlaceholder(this)">
-                <label for="jumlahUang">Jumlah Uang:</label>
-              </div>   
-            <div class="section date-time-container">
-                <div class="date-time-wrapper">
-                  <input type="date" id="tanggal" name="tanggal" placeholder=" ">
-                  <label for="tanggal">Tanggal:</label>
-                </div>
-                <div class="date-time-wrapper">
-                  <input type="time" id="waktu" name="waktu" placeholder=" ">
-                  <label for="waktu">Waktu:</label>
-                </div>
-              </div>
-            <div class="section">
-                <select id="kategori" name="kategori" required>
-                    <option value="" disabled selected>Pilih Kategori Pengeluaran</option>
-                    <option value="Penjualan">Penjualan</option>
-                    <option value="Lainnya">Lainnya</option>
-                </select>
-                <label for="kategori">Kategori Pengeluaran:</label>
+        <div class="card-catatan">
+          <div class="section rupiah">
+            <span>Rp.</span>
+            <input
+              type="number"
+              id="jumlahUang"
+              name="jumlahUang"
+              placeholder="0"
+              oninput="changePlaceholder(this)"
+            />
+            <label for="jumlahUang">Jumlah Uang:</label>
+          </div>
+          <div class="section date-time-container">
+            <div class="date-time-wrapper">
+              <input type="date" id="tanggal" name="tanggal" placeholder=" " />
+              <label for="tanggal">Tanggal:</label>
             </div>
-            <div class="section catatan-container">
-                <textarea id="catatanTambahan" name="catatanTambahan" placeholder=" "></textarea>
-                <label for="catatanTambahan">Catatan Tambahan:</label>
+            <div class="date-time-wrapper">
+              <input type="time" id="waktu" name="waktu" placeholder=" " />
+              <label for="waktu">Waktu:</label>
             </div>
-            <button class="btn-simpan">Simpan</button>
+          </div>
+          <div class="section">
+            <select id="kategori" name="kategori" required>
+              <option value="" disabled selected>
+                Pilih Kategori Pengeluaran
+              </option>
+              <option value="Penjualan">Penjualan</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+            <label for="kategori">Kategori Pengeluaran:</label>
+          </div>
+          <div class="section catatan-container">
+            <textarea
+              id="catatanTambahan"
+              name="catatanTambahan"
+              placeholder=" "
+            ></textarea>
+            <label for="catatanTambahan">Catatan Tambahan:</label>
+          </div>
+          <button class="btn-simpan">Simpan</button>
         </div>
+      </div>
     </div>
-    </div>
-</body>
+  </body>
 </html>

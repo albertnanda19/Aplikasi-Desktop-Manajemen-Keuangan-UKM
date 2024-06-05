@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #EEF7FF;
+        }
+
+        .login {
+            color: gray;
+            width: 500px;
+            margin: 16px auto;
+            font-size: 16px;
+            margin-top: 10%;
+
+        }
+
+        /* Reset top and bottom margins from certain elements */
+        .login-header,
+        .login p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .login-header {
+            padding: 20px;
+            font-size: 1.4em;
+            font-weight: normal;
+            text-align: center;             
+        }
+
+        .login-container {
+            padding: 12px;
+            border-radius: 0 0 25px 25px;
+        }
+
+        /* Every row inside .login-container is defined with p tags */
+        .login p {
+            padding: 12px;
+        }
+
+        .login input {
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            border-width: 1px;
+            border-style: solid;
+            padding: 16px;
+            outline: 0;
+            font-family: inherit;
+            font-size: 0.95em;
+        }
+
+        .login input[type="email"],
+        .login input[type="password"] {
+            background: #fff;
+            border-color: #bbb;
+            color: #555;
+        }
+
+        /* Text fields' focus effect */
+        .login input[type="email"]:focus,
+        .login input[type="password"]:focus {
+            border-color: #888;
+        }
+
+        .login input[type="submit"] {
+            background: #4D869C;
+            border-color: transparent;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="login">
+        <h2 class="login-header">Log in</h2>
+        <form class="login-container">
+            <p>
+                <input type="text" placeholder="Username" name="username">
+            </p>
+            <p>
+                <input type="password" placeholder="Password" name="password">
+            </p>
+            <p>
+                <input type="submit" value="Masuk">
+                <input type="hidden" name="id">
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>
