@@ -1,0 +1,181 @@
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EEF7FF;
+  }
+  
+  /*
+  header {
+    background-color: #4D869C;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+  
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    list-style-type: none;
+  }
+  
+  nav li {
+    margin-right: 20px;
+    cursor: pointer;
+    color: white ;
+  }
+  
+  nav ul li a {
+    color: white;
+  }
+  
+  */
+  
+  .navbar{
+  background: #7AB2B2;
+  margin: 0;
+  padding: 10px 30px;
+  }
+  
+  .logo{
+  font-size: 18pt;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  }
+  
+  .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+  
+  .menu{
+  margin: 0;
+  display: flex;
+  list-style: none;
+  padding: 0;			
+  }
+  
+  .menu li{
+  padding-left: 0;
+  margin-right: 10px;
+  }
+  
+  .menu li a{
+  padding:10px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-family: sans-serif;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  p {
+    text-align: center;
+    font-size: large;
+  }
+  .date-selection {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .date-selection label {
+    margin-right: 10px;
+  }
+  
+  .date-selection input {
+    margin-right: 10px;
+  }
+  
+  .date-selection button {
+    background-color: #4D869C;
+    padding: 5px 10px;
+    border: 2px;
+    cursor: pointer;
+  }
+  
+  .date-selection button a {
+    color: white;
+  }
+  
+  .data-container {
+    max-width: 1225px;
+    margin: 20px;
+    padding: 20px;
+    padding-top: 40px;
+    border: 1px solid #4D869C;
+    border-radius: 20px;
+    background-color: #CDE8E5;
+  }
+  
+  /*
+  
+  .header {
+    text-align: left;
+    padding: 0;
+    color: black;
+    margin: 0;
+  }
+  
+  
+  table {
+    width: 100%;
+    /*margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    
+    text-align: center;
+  }
+  
+  .transactions {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .transaction {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .see-more {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: #4D869C;
+  }
+  */
+  
+  .summary {
+    display: flex;
+    margin: 20px 0;
+  }
+  
+  .summary-box {
+    width: 400px;
+    justify-content: space-between;
+    background-color: #7AB2B2;
+    padding: 10px;
+    border: 1px solid #4D869C;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    margin: 0 10px;
+  }

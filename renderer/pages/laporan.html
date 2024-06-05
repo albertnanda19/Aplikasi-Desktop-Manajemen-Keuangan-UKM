@@ -1,2 +1,59 @@
-<h1>Laporan</h1>
-<p>Ini adalah halaman laporan.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan</title>
+    <link rel="stylesheet" href="renderer/style/style.css">
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+      
+          <a class="logo">CAUAN</a>
+      
+          <ul class="menu">
+            <li><a href="#" data-page="dashboard.html">Dashboard</a></li>
+            <li><a href="#" data-page="pemasukan.html">Pemasukan</a></li>
+            <li><a href="#" data-page="pengeluaran.html">Pengeluaran</a></li>
+            <li><a href="#" data-page="laporan.html">Laporan</a></li>
+          </ul>
+        </div>
+       
+      </nav>
+    </header>
+    <main>
+        <p>Pilih Tanggal</p>
+        <div class="date-selection">
+            <label for="start-date">Dari:</label>
+            <input type="date" id="start-date">
+            <label for="end-date">Hingga:</label>
+            <input type="date" id="end-date">
+            <button><a href="data.html">Lihat Data</a></button> <!--data.html hanya ditambahkan untuk melihat fungsi tombol sebelum pakai database-->
+        </div>
+        <div class="data-display">
+            <!-- Data akan ditampilkan di sini sesuai tanggal yang dipilih -->
+        </div>
+    
+      <div class="summary">
+        <div class="summary-box">
+          <h3>Total Pemasukan</h3>
+          <p>Rp. X.XXX.XXX</p>
+        </div>
+        <div class="summary-box">
+          <h3>Total Pengeluaran</h3>
+          <p>Rp. X.XXX.XXX</p>
+        </div>
+        <div class="summary-box">
+          <h3>Total Keuntungan</h3>
+          <p>Rp. XX.XXX</p>
+        </div>
+        <div class="summary-box">
+          <h3>Tarif PPh</h3>
+          <p>Rp. X.XXX.XXX * 0.5%</p>
+        </div>
+      </div>
+      </main>
+</body>
+</html>
