@@ -1,34 +1,65 @@
 <div class="dashboard-container">
+  
   <div class="profit-container">
     <div class="profit-wrapper">
       <h4>Total Keuntungan</h4>
-      <span id="profit-amount">Loadings...</span>
-    </div>
-    <div class="profit-date-container">
-      <p>Tanggal</p>
-      <div class="profit-date-wrapper">
-        <div class="profit-from-date-wrapper">
-          <span id="profit-from-date">Loading...</span>
-        </div>
-        <div class="profit-to-date-wrapper">
-          <span id="profit-to-date">Loading...</span>
+      <div class="profit-number">
+        <span id="profit-amount">Loadings...</span>
+      </div>
+      <div class="profit-date-container">
+        <p>Tanggal</p>
+        <div class="profit-date-wrapper">
+          <div class="profit-from-date-wrapper">
+            <span id="profit-from-date"></span>
+              <input type="date">
+            <span id="profit-to-date">-</span>
+              <input type="date">
+          </div>
         </div>
       </div>
     </div>
+    <canvas id="profit-chart" width="500" height="200"></canvas>
   </div>
 
-  <p>
-    Pemasukan: <span id="income-amount">Loading...</span> (dari
-    <span id="income-from-date">Loading...</span> sampai
-    <span id="income-to-date">Loading...</span>)
-  </p>
-  <p>
-    Pengeluaran: <span id="expense-amount">Loading...</span> (dari
-    <span id="expense-from-date">Loading...</span> sampai
-    <span id="expense-to-date">Loading...</span>)
-  </p>
+  <div class="profit-container">
+    <div class="profit-wrapper">
+      <h4>Total Pemasukan</h4>
+      <div class="profit-number">
+        <span id="income-amount">Loadings...</span>
+      </div>
+      <div class="profit-date-container">
+        <p>Tanggal</p>
+        <div class="profit-date-wrapper">
+          <div class="profit-from-date-wrapper">
+            <span id="income-from-date"></span>
+              <input type="date">
+            <span id="income-to-date">-</span>
+              <input type="date">
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas id="income-chart" width="500" height="200"></canvas>
+  </div>
 
-  <canvas id="profit-chart" width="800" height="200"></canvas>
-  <canvas id="income-chart" width="800" height="200"></canvas>
-  <canvas id="expense-chart" width="800" height="200"></canvas>
+  <div class="profit-container">
+    <div class="profit-wrapper">
+      <h4>Total Pengeluaran</h4>
+      <div class="profit-number">
+        <span id="expense-amount">Loadings...</span>
+      </div>  
+      <div class="profit-date-container">
+        <p>Tanggal</p>
+        <div class="profit-date-wrapper">
+          <div class="profit-from-date-wrapper">
+            <span id="expense-from-date"></span>
+              <input type="date">
+            <span id="expense-to-date">-</span>
+              <input type="date">
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas id="expense-chart" width="500" height="200"></canvas>
+  </div>
 </div>
