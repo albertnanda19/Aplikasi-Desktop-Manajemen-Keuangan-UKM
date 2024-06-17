@@ -30,10 +30,14 @@ body {
   border: 1px black;
   border-style: solid;
   font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 .content .profit-container {
   display: flex;
+  margin: auto;
+  padding: 2rem;
+  gap: 50px;
   margin: auto;
   padding: 2rem;
   gap: 50px;
@@ -59,7 +63,9 @@ body {
 .content .profit-container .profit-date-container {
   display: flex;
   padding-top: 60px;
+  padding-top: 60px;
   gap: 4px;
+  color: black;
   color: black;
 }
 
