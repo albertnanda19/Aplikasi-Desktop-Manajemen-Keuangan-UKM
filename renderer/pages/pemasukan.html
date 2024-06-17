@@ -1,104 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pemasukan</title>
-    <link rel="stylesheet" href="../css/style.css" />
-
-    <style>
-      .navbar {
-        background: #7ab2b2;
-        margin: 0;
-        padding: 10px 30px;
-      }
-
-      .logo {
-        font-size: 18pt;
-        font-weight: bold;
-        text-decoration: none;
-        color: black;
-        font-family: sans-serif;
-      }
-
-      .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .menu {
-        margin: 0;
-        display: flex;
-        list-style: none;
-        padding: 0;
-      }
-
-      .menu li {
-        padding-left: 0;
-        margin-right: 10px;
-      }
-
-      .menu li a {
-        padding: 10px;
-        color: black;
-        text-decoration: none;
-        display: inline-block;
-        font-family: sans-serif;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="content">
-      <div class="main">
-        <div class="card">
-          <img src="../aset/Pencil.png" alt="" />
-          <h1>Catat Pemasukan</h1>
+<div class="content">
+  <div class="main">
+    <div class="card">
+      <img src="../aset/Pencil.png" alt="" />
+      <h1>Catat Pemasukan</h1>
+    </div>
+    <div class="card-catatan">
+      <div class="section rupiah">
+        <span>Rp.</span>
+        <input
+          type="number"
+          id="jumlahUang"
+          name="jumlahUang"
+          placeholder="0"
+          oninput="changePlaceholder(this)"
+        />
+        <label for="jumlahUang">Jumlah Uang:</label>
+      </div>
+      <div class="section date-time-container">
+        <div class="date-time-wrapper">
+          <input type="date" id="tanggal" name="tanggal" placeholder=" " />
+          <label for="tanggal">Tanggal:</label>
         </div>
-        <div class="card-catatan">
-          <div class="section rupiah">
-            <span>Rp.</span>
-            <input
-              type="number"
-              id="jumlahUang"
-              name="jumlahUang"
-              placeholder="0"
-              oninput="changePlaceholder(this)"
-            />
-            <label for="jumlahUang">Jumlah Uang :</label>
-          </div>
-          <div class="section date-time-container">
-            <div class="date-time-wrapper">
-              <input type="date" id="tanggal" name="tanggal" placeholder=" " />
-              <label for="tanggal">Tanggal :</label>
-            </div>
-            <div class="date-time-wrapper">
-              <input type="time" id="waktu" name="waktu" placeholder=" " />
-              <label for="waktu">Waktu :</label>
-            </div>
-          </div>
-          <div class="section">
-            <select id="kategori" name="kategori" required>
-              <option value="" disabled selected>
-                Pilih Kategori Pemasukan
-              </option>
-              <option value="Penjualan">Penjualan</option>
-              <option value="Lainnya">Lainnya</option>
-            </select>
-            <label for="kategori">Kategori Pemasukan :</label>
-          </div>
-          <div class="section catatan-container">
-            <textarea
-              id="catatanTambahan"
-              name="catatanTambahan"
-              placeholder=" "
-            ></textarea>
-            <label for="catatanTambahan">Catatan Tambahan :</label>
-          </div>
-          <button class="btn-simpan">Simpan</button>
+        <div class="date-time-wrapper">
+          <input type="time" id="waktu" name="waktu" placeholder=" " />
+          <label for="waktu">Waktu:</label>
         </div>
       </div>
+      <div class="section">
+        <select id="kategori" name="kategori" required>
+          <option value="" disabled selected>Pilih Kategori Pemasukan</option>
+        </select>
+        <label for="kategori">Kategori Pemasukan:</label>
+      </div>
+      <div class="section catatan-container">
+        <textarea
+          id="catatanTambahan"
+          name="catatanTambahan"
+          placeholder=" "
+        ></textarea>
+        <label for="catatanTambahan">Catatan Tambahan:</label>
+      </div>
+      <button class="btn-simpan" id="simpanPemasukanButton">Simpan</button>
     </div>
-  </body>
-</html>
+  </div>
+</div>

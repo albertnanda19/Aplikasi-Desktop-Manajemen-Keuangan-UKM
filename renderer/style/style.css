@@ -1,0 +1,21 @@
+.navbar {
+  background: #7ab2b2;
+  margin: 0;
+  padding: 10px 30px;
+}
+.summary {
+  display: flex;
+  margin: 20px 0;
+}
+
+.summary-box {
+  width: 400px;
+  justify-content: space-between;
+  background-color: #7ab2b2;
+  padding: 10px;
+  border: 1px solid #4d869c;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  margin: 0 10px;
+}
