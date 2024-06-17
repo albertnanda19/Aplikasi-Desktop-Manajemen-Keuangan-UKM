@@ -31,6 +31,22 @@ const navigate = async (page) => {
 
     if (page === "dashboard.html") {
       loadDashboardData();
+    } else if (page === "laporan.html") {
+      setupReportPage();
+    } else if (page === "pengeluaran.html") {
+      await loadCategories();
+      document
+        .getElementById("simpanPengeluaranButton")
+        .addEventListener("click", async () => {
+          await addExpense();
+        });
+    } else if (page === "pemasukan.html") {
+      await loadCategories();
+      document
+        .getElementById("simpanPemasukanButton")
+        .addEventListener("click", async () => {
+          await addIncome();
+        });
     }
   } catch (error) {
     console.error("Error loading page:", error);
@@ -116,7 +132,182 @@ const loadChart = (canvasId, label, data) => {
   });
 };
 
+const loadCategories = async () => {
+  try {
+    const response = await fetch("http://127.0.0.1:8000/categories");
+    const result = await response.json();
+
+    const select = document.getElementById("kategori");
+
+    result.data.forEach((category) => {
+      const option = document.createElement("option");
+      option.value = category.id;
+      option.textContent = category.category;
+      select.appendChild(option);
+    });
+  } catch (error) {
+    console.error("Error loading categories:", error);
+  }
+};
+
+const addExpense = async () => {
+  const amount = document.getElementById("jumlahUang").value;
+  const date = document.getElementById("tanggal").value;
+  let time = document.getElementById("waktu").value;
+  const category = document.getElementById("kategori").value;
+  const note = document.getElementById("catatanTambahan").value;
+
+  if (!amount || !date || !time || !category) {
+    alert("Semua bidang harus diisi!");
+    return;
+  }
+
+  // Add ":00" to the time if it's in "HH:mm" format
+  if (time.length === 5) {
+    time += ":00";
+  }
+
+  const expenseData = {
+    amount: parseInt(amount),
+    date: date,
+    time: time,
+    category: category,
+    note: note,
+  };
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/expense", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(expenseData),
+    });
+
+    if (response.ok) {
+      alert("Pengeluaran berhasil disimpan!");
+    } else {
+      const errorData = await response.json();
+      alert(`Gagal menyimpan pengeluaran. Error: ${errorData.message}`);
+    }
+  } catch (error) {
+    console.error("Error adding expense:", error);
+    alert("Terjadi kesalahan saat menyimpan pengeluaran. Silakan coba lagi.");
+  }
+};
+
+const addIncome = async () => {
+  const amount = document.getElementById("jumlahUang").value;
+  const date = document.getElementById("tanggal").value;
+  let time = document.getElementById("waktu").value;
+  const category = document.getElementById("kategori").value;
+  const note = document.getElementById("catatanTambahan").value;
+
+  if (!amount || !date || !time || !category) {
+    alert("Semua bidang harus diisi!");
+    return;
+  }
+
+  if (time.length === 5) {
+    time += ":00";
+  }
+
+  const expenseData = {
+    amount: parseInt(amount),
+    date: date,
+    time: time,
+    category: category,
+    note: note,
+  };
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/income", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(expenseData),
+    });
+
+    if (response.ok) {
+      alert("Pemasukan berhasil disimpan!");
+    } else {
+      const errorData = await response.json();
+      alert(`Gagal menyimpan pengeluaran. Error: ${errorData.message}`);
+    }
+  } catch (error) {
+    console.error("Error adding expense:", error);
+    alert("Terjadi kesalahan saat menyimpan pengeluaran. Silakan coba lagi.");
+  }
+};
+
+const setupReportPage = () => {
+  const filterButton = document.getElementById("filter-button");
+  if (filterButton) {
+    filterButton.addEventListener("click", async () => {
+      const date = document.getElementById("date").value;
+      if (date) {
+        await loadReportData(date);
+        document.getElementById("selected-date").innerText = date;
+      }
+    });
+  }
+
+  const today = new Date().toISOString().split("T")[0];
+  document.getElementById("date").value = today;
+  loadReportData(today);
+  document.getElementById("selected-date").innerText = today;
+};
+
+const loadReportData = async (date) => {
+  try {
+    const response = await fetch(`http://127.0.0.1:8000/report?date=${date}`);
+    const result = await response.json();
+    const data = result.data;
+
+    const tableBody = document.querySelector("#report-table tbody");
+    tableBody.innerHTML = "";
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+
+    data.forEach((item) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.type}</td>
+        <td>${formatRupiah(item.amount)}</td>
+      `;
+      tableBody.appendChild(row);
+
+      if (item.type === "income") {
+        totalIncome += item.amount;
+      } else if (item.type === "expense") {
+        totalExpense += item.amount;
+      }
+    });
+
+    const totalProfit = totalIncome - totalExpense;
+
+    document.getElementById("total-income").innerText =
+      formatRupiah(totalIncome);
+    document.getElementById("total-expense").innerText =
+      formatRupiah(totalExpense);
+    document.getElementById("total-profit").innerText =
+      formatRupiah(totalProfit);
+  } catch (error) {
+    console.error("Error fetching report data:", error);
+  }
+};
+
+const formatRupiah = (amount) => {
+  return amount.toLocaleString("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   loadNavbar();
   navigate("dashboard.html");
+  setupReportPage();
 });

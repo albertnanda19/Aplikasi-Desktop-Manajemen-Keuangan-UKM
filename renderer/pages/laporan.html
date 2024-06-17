@@ -1,2 +1,35 @@
-<h1>Laporan</h1>
-<p>Ini adalah halaman laporan.</p>
+<p>Pilih Tanggal</p>
+<div class="date-selection">
+  <label for="start-date">Tanggal</label>
+  <input type="date" id="date" />
+  <button id="filter-button">Lihat Data</button>
+</div>
+<div class="selected-date">
+  <p>Tanggal dipilih: <span id="selected-date"></span></p>
+</div>
+<div class="data-display">
+  <table id="report-table">
+    <thead>
+      <tr>
+        <th>Tipe</th>
+        <th>Jumlah</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="summary">
+  <div class="summary-box">
+    <h3>Total Pemasukan</h3>
+    <p id="total-income">Rp. 0</p>
+  </div>
+  <div class="summary-box">
+    <h3>Total Pengeluaran</h3>
+    <p id="total-expense">Rp. 0</p>
+  </div>
+  <div class="summary-box">
+    <h3>Total Keuntungan</h3>
+    <p id="total-profit">Rp. 0</p>
+  </div>
+</div>

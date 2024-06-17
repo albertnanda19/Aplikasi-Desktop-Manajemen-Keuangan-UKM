@@ -1,2 +1,46 @@
-<h1>Pemasukan</h1>
-<p>Ini adalah halaman pemasukan.</p>
+<div class="content">
+  <div class="main">
+    <div class="card">
+      <img src="../aset/Pencil.png" alt="" />
+      <h1>Catat Pemasukan</h1>
+    </div>
+    <div class="card-catatan">
+      <div class="section rupiah">
+        <span>Rp.</span>
+        <input
+          type="number"
+          id="jumlahUang"
+          name="jumlahUang"
+          placeholder="0"
+          oninput="changePlaceholder(this)"
+        />
+        <label for="jumlahUang">Jumlah Uang:</label>
+      </div>
+      <div class="section date-time-container">
+        <div class="date-time-wrapper">
+          <input type="date" id="tanggal" name="tanggal" placeholder=" " />
+          <label for="tanggal">Tanggal:</label>
+        </div>
+        <div class="date-time-wrapper">
+          <input type="time" id="waktu" name="waktu" placeholder=" " />
+          <label for="waktu">Waktu:</label>
+        </div>
+      </div>
+      <div class="section">
+        <select id="kategori" name="kategori" required>
+          <option value="" disabled selected>Pilih Kategori Pemasukan</option>
+        </select>
+        <label for="kategori">Kategori Pemasukan:</label>
+      </div>
+      <div class="section catatan-container">
+        <textarea
+          id="catatanTambahan"
+          name="catatanTambahan"
+          placeholder=" "
+        ></textarea>
+        <label for="catatanTambahan">Catatan Tambahan:</label>
+      </div>
+      <button class="btn-simpan" id="simpanPemasukanButton">Simpan</button>
+    </div>
+  </div>
+</div>
