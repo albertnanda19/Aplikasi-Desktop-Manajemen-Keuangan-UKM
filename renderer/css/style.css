@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 * {
   padding: 0px;
   margin: 0px;
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,19 +24,47 @@ body {
   align-items: center;
 }
 
-.content .dashboard-container {
-  background-color: #cde8e5;
+.dashboard-container {
+  /*background-color: #cde8e5;*/
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px black;
-  border-style: solid;
-  font-family: sans-serif;
-  font-family: sans-serif;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
 }
 
-.content .profit-container {
+.main {
+  /*background-color: #cde8e5;*/
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.report-container{
+  /*background-color: #cde8e5;*/
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
+}
+.dashboard-header h1 {
+  margin: 20px;
+  font-size: 38px;
+  color: #226e8b;
+}
+
+.profit-container {
   display: flex;
   margin: auto;
   padding: 2rem;
@@ -43,11 +74,11 @@ body {
   gap: 50px;
 }
 
-.content .profit-container .profit-wrapper {
-  background: #4d869c;
+.profit-container .profit-wrapper {
+  background: #226e8b;
   padding: 2rem;
   border-radius: 10px;
-  width: 220px;
+  width: 400px;
   height: 80px;
   display: flex;
   flex-direction: column;
@@ -55,17 +86,15 @@ body {
   color: white;
 }
 
-.content .profit-container .profit-wrapper .profit-number {
+.profit-container .profit-wrapper .profit-number {
   font-weight: bold;
   font-size: 20pt;
 }
 
-.content .profit-container .profit-date-container {
+.profit-container .profit-date-container {
   display: flex;
-  padding-top: 60px;
-  padding-top: 60px;
+  padding-top: 25px;
   gap: 4px;
-  color: black;
   color: black;
 }
 
@@ -94,8 +123,8 @@ canvas {
 }
 
 .main .card h1 {
-  color: #000000;
-  font-family: "Times New Roman", Times, serif;
+  color: #226e8b;
+  /*font-family: "Times New Roman", Times, serif;*/
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -107,8 +136,8 @@ canvas {
 }
 .card-catatan {
   width: 619px;
-  background: #4d869c;
-  border: 0.955px solid #757575;
+  background: #72a9be;
+  border: 0.955px solid white;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -130,7 +159,7 @@ canvas {
 .section textarea {
   padding: 8px 16px 8px 16px;
   border-radius: 20px;
-  border: 0.955px solid #757575;
+  border: 0.955px solid white;
   background: #cde8e5;
   width: 100%;
 }
@@ -147,8 +176,8 @@ canvas {
   box-sizing: border-box;
   padding: 8px 16px;
   border-radius: 20px;
-  border: 0.955px solid #757575;
-  background: #cde8e5;
+  border: 0.955px solid white;
+  background: white;
 }
 
 #jumlahUang {
@@ -177,7 +206,7 @@ canvas {
   top: 12px;
   left: 16px;
   font-size: 16px;
-  color: #757575;
+  color: white;
   transition: all 0.3s ease;
 }
 
@@ -185,7 +214,7 @@ canvas {
 .catatan-container textarea:not(:placeholder-shown) + label {
   top: -10px;
   left: 10px;
-  color: #757575;
+  color: white;
   background: #cde8e5;
   padding: 0 5px;
   border-radius: 8px;
@@ -206,8 +235,8 @@ canvas {
   font-size: 12px;
   padding: 0 5px;
   border-radius: 20;
-  border: #3d6270;
-  background: #cde8e5;
+  border: white;
+  background: white;
   font-size: 14px;
 }
 
@@ -222,9 +251,9 @@ label[for="kategori"] {
   height: 36.75px;
   border-radius: 36px;
   border: 0.955px solid #3d6270;
-  background: #cde8e5;
+  background: white;
   cursor: pointer;
-  font-family: "Times New Roman", Times, serif;
+  /*font-family: "Times New Roman", Times, serif;*/
   font-size: 20px;
   font-weight: bolder;
   color: #313131;
@@ -232,21 +261,21 @@ label[for="kategori"] {
 
 select:invalid {
   color: #757575;
-  font-family: "Times New Roman", Times, serif;
+  /*font-family: "Times New Roman", Times, serif;*/
   font-size: 16px;
   font-weight: normal;
 }
 
 select option {
   color: black;
-  font-family: "Times New Roman", Times, serif;
+  /*font-family: "Times New Roman", Times, serif;*/
   font-size: 20px;
   font-weight: normal;
 }
 
 select:valid {
   color: black;
-  font-family: "Times New Roman", Times, serif;
+  /*font-family: "Times New Roman", Times, serif;*/
   font-size: 20px;
   font-weight: normal;
 }
@@ -275,7 +304,7 @@ select option[value=""][disabled] {
   padding: 8px 16px;
   border-radius: 20px;
   border: 0.955px solid #757575;
-  background: #cde8e5;
+  background: white;
   box-sizing: border-box; /* Tambahkan properti ini */
   width: 100%;
 }
@@ -295,7 +324,7 @@ select option[value=""][disabled] {
   left: 10px;
   font-size: 14px;
   color: #757575;
-  background: #cde8e5;
+  background: white;
   padding: 0 5px;
   border-radius: 8px;
 }
@@ -310,7 +339,7 @@ select option[value=""][disabled] {
   margin-left: 10px; /* Adjust margin as needed */
   font-size: 24px;
   font-weight: bolder;
-  color: #313131;
+  color: white;
 }
 
 .section.rupiah input {
@@ -318,9 +347,9 @@ select option[value=""][disabled] {
   font-size: 24px;
 }
 .navbar {
-  background: #7ab2b2;
+  background: #226e8b;
   margin: 0;
-  padding: 10px 30px;
+  padding: 15px 30px;
 }
 
 .logo {
@@ -328,7 +357,7 @@ select option[value=""][disabled] {
   font-weight: bold;
   text-decoration: none;
   color: white;
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
 }
 
 .container {
@@ -354,39 +383,78 @@ select option[value=""][disabled] {
   color: white;
   text-decoration: none;
   display: inline-block;
-  font-family: sans-serif;
+  font-size: 18px;
+  /*font-family: sans-serif;*/
 }
 
-.logo {
-  font-size: 18pt;
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
-  font-family: sans-serif;
+.report-container h1{
+  text-align: center;
+  color: #226e8b;
+  margin-bottom: 10px;
+}
+.report-container p{
+  text-align: center;
+} 
+
+.date-selection {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu {
-  margin: 0;
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
-
-.menu li {
-  padding-left: 0;
+.date-selection label {
   margin-right: 10px;
 }
 
-.menu li a {
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-  display: inline-block;
-  font-family: sans-serif;
+.date-selection input {
+  margin-right: 10px;
+}
+
+.date-selection button {
+  background-color: #226e8b;
+  padding: 5px 10px;
+  border: 2px;
+  cursor: pointer;
+}
+
+.date-selection button {
+  color: white;
+}
+
+.selected-date p{
+  font-weight: bold;
+  color: #226e8b;
+}
+
+.data-display {
+ background-color: #72a9be;
+ font-size: 18px;
+}
+
+.data-display {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#report-table th,
+#report-table td {
+  padding: 8px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#report-table th {
+  background-color: #226e8b;
+  color: white;
+}
+
+#report-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
