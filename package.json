@@ -6,7 +6,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx electronmon ."
+    "start": "npx electronmon .",
+    "build": "electron-builder"
   },
   "author": "Albert Mangiri",
   "license": "MIT",
@@ -16,13 +17,28 @@
     "chart.js": "^4.4.3",
     "chartjs-adapter-moment": "^1.0.1",
     "dotenv": "^16.4.5",
-    "electron": "^30.0.9",
+    "gulp": "^5.0.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "toastify-js": "^1.12.0"
   },
+  "build": {
+    "appId": "com.example.myapp",
+    "productName": "My Electron App",
+    "copyright": "Copyright © 2024 My Company",
+    "files": [
+      "dist/*"
+    ],
+    "platforms": [
+      "darwin"
+    ]
+  },
   "devDependencies": {
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3",
     "electron-packager": "^17.1.2",
+    "electron-windows-installer": "^1.7.8",
+    "electron-winstaller": "^5.3.1",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   }

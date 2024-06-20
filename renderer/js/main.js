@@ -55,7 +55,7 @@ const navigate = async (page) => {
 
 const loadDashboardData = async () => {
   try {
-    const response = await fetch("http://localhost:8000/dashboard");
+    const response = await fetch("http://150.136.51.219:8000/dashboard");
     const result = await response.json();
     const data = result.data;
 
@@ -134,7 +134,7 @@ const loadChart = (canvasId, label, data) => {
 
 const loadCategories = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/categories");
+    const response = await fetch("http://150.136.51.219:8000/categories");
     const result = await response.json();
 
     const select = document.getElementById("kategori");
@@ -176,7 +176,7 @@ const addExpense = async () => {
   };
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/expense", {
+    const response = await fetch("http://150.136.51.219:8000/expense", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -221,7 +221,7 @@ const addIncome = async () => {
   };
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/income", {
+    const response = await fetch("http://150.136.51.219:8000/income", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -261,7 +261,9 @@ const setupReportPage = () => {
 
 const loadReportData = async (date) => {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/report?date=${date}`);
+    const response = await fetch(
+      `http://150.136.51.219:8000/report?date=${date}`
+    );
     const result = await response.json();
     const data = result.data;
 

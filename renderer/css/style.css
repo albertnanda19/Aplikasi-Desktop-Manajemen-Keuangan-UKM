@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 * {
   padding: 0px;
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -47,7 +47,7 @@ body {
   box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
 }
 
-.report-container{
+.report-container {
   /*background-color: #cde8e5;*/
   padding: 40px;
   width: 100%;
@@ -66,11 +66,10 @@ body {
 
 .profit-container {
   display: flex;
-  margin: auto;
+  /* flex-direction: column; */
   padding: 2rem;
   gap: 50px;
   margin: auto;
-  padding: 2rem;
   gap: 50px;
 }
 
@@ -387,14 +386,14 @@ select option[value=""][disabled] {
   /*font-family: sans-serif;*/
 }
 
-.report-container h1{
+.report-container h1 {
   text-align: center;
   color: #226e8b;
   margin-bottom: 10px;
 }
-.report-container p{
+.report-container p {
   text-align: center;
-} 
+}
 
 .date-selection {
   margin-bottom: 20px;
@@ -420,14 +419,14 @@ select option[value=""][disabled] {
   color: white;
 }
 
-.selected-date p{
+.selected-date p {
   font-weight: bold;
   color: #226e8b;
 }
 
 .data-display {
- background-color: #72a9be;
- font-size: 18px;
+  background-color: #72a9be;
+  font-size: 18px;
 }
 
 .data-display {
